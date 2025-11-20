@@ -55,7 +55,7 @@ PYBIND11_MODULE(_pylinearpartition, m)
       // as a numpy array.
       std::vector<Prob> probs;
       for (const auto& [key, value] : parser.Pij) {
-        probs.push_back({ key.first, key.second, value });
+        probs.push_back({ key.first - 1, key.second - 1, value });
       }
 
       using namespace pybind11::literals;
