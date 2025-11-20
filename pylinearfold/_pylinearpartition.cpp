@@ -45,9 +45,10 @@ PYBIND11_MODULE(_pylinearpartition, m)
        int beam_size,
        bool verbose,
        bool sharpturn,
-       float cutoff) {
+       float cutoff,
+       float gamma) {
       BeamCKYParser parser(
-        beam_size, !sharpturn, verbose, "", "", false, cutoff, "", true);
+        beam_size, !sharpturn, verbose, "", "", false, cutoff, "", true, gamma);
       double free_energy = parser.parse(seq);
 
       // Convert Pij to a vector of Prob structs in order to be exposable
@@ -65,6 +66,7 @@ PYBIND11_MODULE(_pylinearpartition, m)
     py::arg("seq"),
     py::arg("beamsize") = 100,
     py::arg("verbose") = false,
-    py::arg("sharpturn") = false),
-    py::arg("cutoff") = 1e-5;
+    py::arg("sharpturn") = false,
+    py::arg("cutoff") = 1e-5,
+    py::arg("gamma") = 1.0);
 }
