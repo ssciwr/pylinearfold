@@ -37,7 +37,7 @@ jobs:
           CXX=clang-cl
           SKBUILD_CMAKE_ARGS="-G Ninja"
 
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v5
       with:
         name: wheels-${{ matrix.os }}
         path: ./wheelhouse/*.whl
