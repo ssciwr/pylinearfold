@@ -13,7 +13,7 @@ build-backend = "scikit_build_core.build"
 # single source of truth for pylinearfold's version
 [project]
 name = "pylinearfold"
-version = "0.3.0"
+version = "1.0.0"
 description = "Python bindings for LinearFold and LinearPartition"
 readme = "README.md"
 maintainers = [
